@@ -75,7 +75,50 @@ func ex4() {
 }
 
 func ex5() {
-	
+	nums := []int{5, -1, 9, 10, 1100, 6, -1, 6}
+	sum := 0
+
+	subSlice := nums[1 : len(nums)-2]
+
+	for _, num := range subSlice {
+		sum += num
+	}
+
+	fmt.Println("Elements:", subSlice, "Sum:", sum)
+
+}
+
+func ex6() {
+	friends := []string{"Marry", "John", "Paul", "Diana"}
+	newFriends := make([]string, len(friends))
+
+	copy(newFriends, friends)
+
+	newFriends[0] = "Another"
+
+	fmt.Println(friends, newFriends)
+}
+
+func ex7() {
+	friends := []string{"Marry", "John", "Paul", "Diana"}
+	newFriends := []string{}
+
+	newFriends = append(newFriends, friends...)
+
+	newFriends[0] = "Another"
+
+	fmt.Println(friends, newFriends)
+}
+
+func ex8() {
+	years := []int{2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010}
+
+	newYears := []int{}
+
+	newYears = append(newYears, years[0:3]...)
+	newYears = append(newYears, years[len(years)-4:]...)
+
+	fmt.Println(newYears)
 }
 
 func main() {
@@ -83,5 +126,8 @@ func main() {
 	// ex2()
 	// ex3()
 	// ex4()
-	ex5()
+	// ex5()
+	// ex6()
+	// ex7()
+	ex8()
 }
